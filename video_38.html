@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div{
+            height: 200px;
+            border: 2px solid red;
+        }
+        .header{
+            background-color: black;
+            color: white;
+        }
+        .border{
+            border: 3px solid khaki;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navBar" id="navBa">
+        <div class="div">
+            vishal soni
+        </div>
+        <div class="div">
+            vishal soni
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="firstChildHeader border" id="firstChildHeader">1st child</div>
+        <div class="secondChildHeader border" id="secondChildHeader">2nd child</div>
+        <div class="thirdChildHeader border" id="thirdChildHeader">3rd child</div>
+    </header>
+
+    <ul class="firstUl">
+        <li>home</li>
+        <li>services</li>
+        <li>about us</li>
+        <li>contact</li>
+    </ul>
+</body>
+<script>
+    let navFirstClass = document.getElementsByClassName("div");
+    navFirstClass[0].style.background = "red";
+    navFirstClass[1].style.background = "blue";
+
+    // let nav = document.getElementsByClassName("navBar");
+    let nav = document.getElementById("navBa");
+    console.log(nav);
+    
+    console.log(nav.firstElementChild);
+    nav.firstElementChild.style.color = "cyan";
+    
+
+    //2nd question
+    let header = document.getElementsByClassName("header");
+    header[0].firstElementChild.style.background = "cyan";
+
+    header[0].lastElementChild.style.background = "cyan";
+
+    
+    //question 3
+    let firstUl = document.getElementsByClassName("firstUl")[0];
+    // firstUl = firstUl.childrens;
+    console.log(firstUl);
+    
+    // Array.from(firstUl).forEach(element => {
+    //    element.style.background = "black"; 
+    // });
+
+    firstUl = Array.from(firstUl.children);
+    console.log(firstUl);
+
+    firstUl.forEach(element => {
+        element.style.background="pink";
+    });
+    
+    document.write("u are on");
+
+</script>
+</html>

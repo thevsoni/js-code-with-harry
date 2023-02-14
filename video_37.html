@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="div1 mainClass"></div>
+        <div class="div2Class" id="div2"></div>
+        <div class="div3"></div>
+        <div class="div4" id="div4">vishal
+            <span id="spanId"></span>
+        </div>
+    </div>
+</body>
+<script>
+    let id2 = document.getElementById("div2");
+    console.log(id2);
+
+    console.log(id2.matches(".div2Class"));
+    console.log(id2.matches("#div2v"));
+    
+    console.log(id2.closest(".container"));
+    console.log(id2.closest(".ldiv2Class"));
+    
+    let id4 = document.getElementById("div4");
+    let spanId = document.getElementById("spanId");
+
+    console.log(id4.contains(spanId));
+    
+    
+</script>
+</html>
