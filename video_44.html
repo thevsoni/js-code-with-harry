@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" id="first">
+        i m main.
+    </div>
+</body>
+<script>
+    let first = document.getElementById("first");
+
+    let div1 = document.createElement('div');
+    div1.innerHTML = "<h1>i am before begin</h1>";
+
+    let div2 = document.createElement('div');
+    div2.innerHTML = "<h1>i am after begin</h1>";
+    let div3 = document.createElement('div');
+    div3.innerHTML = "<h1>i am beforeEnd</h1>";
+    let div4 = document.createElement('div');
+    div4.innerHTML = "<h1>i am after end</h1>";
+
+    first.insertAdjacentHTML('beforebegin',div1);
+    first.insertAdjacentHTML('afterbegin',div2);
+    first.insertAdjacentHTML('beforeEnd',div3);
+    first.insertAdjacentHTML('afterEnd',div4);
+
+    //remove
+    first.remove();
+</script>
+</html>

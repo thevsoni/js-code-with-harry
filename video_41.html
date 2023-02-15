@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inner html and outer html and other properties</title>
+</head>
+<body>
+    <h2>inner html</h2>
+    <nav hidden>i am navbar</nav>
+    <span id="id1"> <span id="id2">i m also span inside span</span> i am a span</span>
+    <div>i am first div
+        <div>
+            i am child div of first div
+            <!-- this is comment -->
+        </div>
+    </div>
+    <div>i am second div</div>
+    <header id="header">
+        <span>i am span inside header</span>
+    </header>
+    <footer hidden>
+        hi this is footer
+        <div>this is div under footer</div>
+        <p>this is p under footer</p>
+    </footer>
+</body>
+<script>
+
+    //console.dir
+    console.log(document.getElementsByTagName("span")[0]);
+    console.log(document.getElementsByTagName("div")[0]);
+
+    let a = document.getElementsByTagName("div")[0];
+    console.log(typeof a);
+    console.log(a);
+    console.dir(a);
+    
+    
+    let employee = {
+        name : "vishal",
+        surname : "soni",
+    }
+    
+    console.log(typeof employee);
+    console.log(employee);
+    
+    //inner html
+    console.log("inner html");
+    
+    let id1 = document.getElementById("id1");
+    console.log(id1);
+    console.dir(id1);
+    console.log(id1.innerHTML);
+    console.dir(id1.innerHTML);
+    
+    id1.innerHTML = "<p> i chave changed myself</p>";
+    console.log(id1.innerHTML);
+
+    console.log(document.getElementById("header").innerHTML);
+    
+    
+    //outerHTML
+    console.log("outerHTML");
+    console.log(document.getElementById("header").innerHTML);
+    console.log(document.getElementById("header").outerHTML);
+    
+    //i can also set ,update ,change this outer element
+    console.log(document.getElementById("header").innerHTML);
+    document.getElementById("header").innerHTML = "<P>lets change header inner</p>";
+    console.log(document.getElementById("header").innerHTML);
+    console.log(document.getElementById("header").outerHTML);
+    document.getElementById("header").outerHTML = "<p>i am changing this header outer means changing to entire header</p>";
+    // console.log(document.getElementById("header").outerHTML); //throws error bcs no there is no header element
+
+    console.log("checking about matches and contains");
+    
+    console.log(document.documentElement.children[1].matches("#id1"));
+    console.log(document.getElementsByTagName("span")[0].matches("#id1"));
+    console.log(document.getElementsByTagName("span")[0].matches("#id2"));
+    
+
+    //imp things of inner and outer html
+    console.log("imp things of inner and outer html");
+    
+    console.log(document.getElementsByTagName("div")[0].innerHTML);
+    console.log(document.getElementsByTagName("div")[0].nodeValue);
+    
+    // console.log(document.body.nodeValue);  //doubt 
+    // console.log(document.body.data);//doubt
+    console.log(document.getElementsByTagName("div")[0].innerText);
+    
+    //text content
+    console.log("text content");
+    console.log(document.getElementsByTagName("footer")[0].textContent);
+    console.log(document.getElementsByTagName("footer")[0].innerHTML);
+    console.log(document.getElementsByTagName("footer")[0].outerHTML);
+    console.log(document.getElementsByTagName("footer")[0].TEXT_NODE);
+    console.log(document.getElementsByTagName("footer")[0].innerText);
+    
+
+    //hidden
+    document.getElementsByTagName("nav")[0].hidden= false;
+    document.getElementsByTagName("nav")[0].hidden= true;
+    
+
+
+    
+</script>
+</html>

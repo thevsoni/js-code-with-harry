@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div id="first">
+            i am a first element of first div
+
+        </div>
+        <div id="second">
+            i am a second element of first div
+        </div>
+    </div>
+</body>
+<script>
+    let a = document.getElementsByTagName("div")[0];
+    //classical way to add 
+    a.innerHTML = a.innerHTML+"<h1> i am extra adding from script</h1>";
+
+
+    //good way to do this 
+    let div = document.createElement("div");
+    div.innerHTML = "<h1> hello world </h1>";
+    
+    
+    let div2 = document.createElement("div");
+    div2.innerHTML = "<h1> hello world2 </h1>";
+    let b = document.getElementById("second");
+
+    let z =  a.append(div,div2);
+    // let z = b.appendChild(div2,div);
+    console.log(z);
+    
+
+
+    // document.body.appendChild(div);//we can write both append and appendChild
+</script>
+</html>

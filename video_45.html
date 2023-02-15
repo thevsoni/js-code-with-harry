@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>changing the class name</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .container1{
+            border: 2px solid black;
+            background-color: red;
+        }
+        .container2{
+            border: 2px solid black;
+            background-color: rgb(26, 198, 152);
+        }
+        .container3{
+            /* border: 2px solid black;
+            background-color: rgb(220, 155, 35); */
+            color: tomato;
+            font-weight: bolder;
+        }
+        .container4{
+            padding: 100px;
+        }
+        #firstId{
+            border-radius: 0px;
+        }
+        #secondId{
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container1">
+        i am a container
+    </div>
+</body>
+<script>
+    let div = document.getElementsByTagName("div")[0];
+    div.className = "container2 container3"; //it removes previous classes as well
+    console.log(div.matches(".container1"));
+    
+    div.id = "secondId";
+
+    console.log(div.classList);
+    div.classList.remove();//doesnt effect anything
+    console.log(div.classList);
+    
+    // div.className = "";
+    // console.log(div.classList);
+    
+    div.classList.remove("container2");
+    console.log(div.classList);
+
+    div.classList.add("container4");
+
+    div.classList.toggle("container2");
+
+    console.log(div.classList.contains("container2"));
+
+    div.classList = "hey bey";
+    console.log(div.classList);
+    
+    
+
+    
+</script>
+</html>

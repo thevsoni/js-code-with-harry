@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML ATTRIBUTES AND THEIR METHODS</title>
+</head>
+<body>
+    <div id="first" class="hey" width="10px" data-game="mario" data-player="vishal">
+        hey , i am a first container
+    </div>
+    hellow moto
+</body>
+<script>
+
+    //getAttributes
+    console.log("getAttributes");
+    let first = document.getElementById("first");
+    console.log(first);
+    // let attribute = first.getAttribute("hidden");
+    // console.log(attribute);
+    console.log(first.getAttribute("width"));
+
+    //has attributes
+    console.log("hasAttributes");
+    console.log(first.hasAttribute("class"));
+    console.log(first.hasAttribute("src"));
+    console.log(first.hasAttribute("hidden"));
+    console.log(first.hasAttribute("height"));
+
+    //setAttribut
+    console.log("setAttribute");
+    first.setAttribute("hidden","false");
+    first.setAttribute("class","hey2 hey3"); //through this, hey will be removed and hey2 and hey3 will be set
+    console.log(first.getAttribute("class"));
+    console.log(first.matches(".hey"));
+    
+    //removeAttribute
+    first.removeAttribute("class","hey");//it doesnt matter ,it will remove all class from first 
+    first.removeAttribute("class");//it doesnt matter ,it will remove all class from first 
+    console.log(first.getAttribute("class"));
+    first.setAttribute("class","hey");
+
+    //attributes
+    console.log(first.attributes);
+    
+
+    //custome attribut
+
+    console.log(first.attributes);
+    console.log(first.dataset);
+    console.log(first.dataset.game);
+    console.log(first.dataset.player);
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</script>
+</html>
