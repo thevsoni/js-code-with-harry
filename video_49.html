@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        button{
+            cursor: pointer;
+            color: darkblue;
+            background-color: aqua;
+            display: block;
+        }
+        .myBulb{
+            height: 38px;
+            width: 38px;
+            font-size: 50px;
+            color: black;
+            /* background-color: red; */
+            /* background-color: red; */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- question 1 -->
+    <h3>Question 1</h3>
+    <button onclick="alert('yes u can buy chat gupchup')">chat gupchup</button>
+    <button onclick="alert('momos is better than other oily things')">momoms</button>
+    <button onclick="alert('favourite sweet')">rasogulla</button>
+
+    <!-- question2 -->
+    <h3>Question 2</h3>
+    <a href="https://google.com" target="_blank"><button>Google</button></a>
+    do this same things with event listener
+    <button id="google_with_event">Google Using Event</button>
+
+
+    <!-- Question-5 -->
+    <h3>bulb on and off</h3>
+    <!-- using font awesome to get icon of bulb -->
+    <i class="fa-regular fa-lightbulb myBulb"></i>
+    <button id="btn">button</button>
+
+</body>
+<script>
+    google_with_event.onclick=()=>{
+        // document.location="https://google.com";
+        window.location="https://google.com";
+    }
+
+    var myBulb = document.getElementsByClassName("myBulb")[0];
+    var btn = document.getElementById("btn");
+
+    btn.addEventListener("click",()=>{
+        if(myBulb.style.background != "red"){
+            myBulb.style.background = "red";
+        }
+        else{
+            myBulb.style.background = "white";
+        }
+    });
+    //we can do this with element.classList.toggle
+
+    
+
+</script>
+</html>

@@ -10,18 +10,82 @@
             color: brown;
             background-color: cyan;
         }
+        #btn2{
+            color: rgb(212, 20, 174);
+            background-color: rgb(142, 167, 55);
+            display: block;
+            margin-top: 50px;
+        }
     </style>
 </head>
 <body>
     <button id="btn">click me</button>
+    <button id="btn2">click me</button>
 </body>
 <script>
-    x = ()=>{
-        console.log("i am button");
-        
+
+    // x = ()=>{
+    //     console.log("i am button noob");
+    // }
+    let y = x = ()=>{
+        console.log("i am button noob3");
     }
     let btn = document.getElementById("btn");
+    y();
+
+
     btn.addEventListener("click",x);
+    btn.addEventListener("click",y);
+    btn.addEventListener("click",()=>{  //this is arrow function
+        console.log("i am button moderate");
+    });
+    btn.addEventListener("click",function run(){
+        console.log("i am button pro");
+    });
+    let z = x = ()=>{
+        console.log("i am button noob");
+    }
     
+    let w = ()=>{
+        console.log("i am button noob2");
+    }
+    // let func = function run(){
+    //     console.log("ho");
+    // }
+    let func = function(){
+        console.log("ho");
+    }
+    
+    let fun =()=>{
+        console.log("hofun");
+    }
+
+    func();
+    fun();
+    w();
+
+    //for btn2
+    //The event object
+    console.log("The event object");
+    
+
+    let exampleForE = (e)=>{ //here we r not taking any parameter ,when eventListener happen then it gets
+        //this things and contains many properties like e.target will give that where this event actually 
+        //happened
+
+        console.log("hello moto");
+        console.log(e);
+        console.log(e.target);
+        console.log(e.type);
+        console.log(e.target.type);
+        console.log(e.currentTarget);
+        console.log(e.clientX);
+        console.log(e.clientY);
+        
+
+
+    }
+    btn2.addEventListener("click",exampleForE);
+
 </script>
 </html>

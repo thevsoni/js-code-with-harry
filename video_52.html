@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallBack</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function checkCallBack(src,greed){
+        // setTimeout(()=>{
+        //     console.log("hey buddy");
+            
+        // },3000);
+        src.onload = greed();
+        let script = document.createElement("script");
+        script.src = src;
+        
+    }
+    function greed(){
+        console.log("good Morning");   
+    }
+    checkCallBack("https://google.com",greed);
+
+    function run(a){
+        console.log("hi");
+        console.log(a);
+        
+    }
+    run();
+
+    
+</script>
+</html>

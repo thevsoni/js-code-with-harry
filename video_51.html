@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .timeBox{
+            height: 200px;
+            text-align: center;
+            background-color: rgb(25, 12, 200);
+            color: aqua;
+            /* padding-top: 20px; */
+            /* padding-bottom: 20px; */
+            padding: 20px;
+            font-size: 20px;
+        }
+        li{
+            margin-top: 20px;
+            color: pink;
+            background-color: rgb(95, 17, 131);
+            width: 200px;
+            margin-left: auto;
+            margin-right: auto;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="timeBox">
+        <div>
+        This is a clock . You can get Time , date , month everythings 
+        just say what do you want to get.just click on button
+        </div>
+        <ul>
+            <li id="both">get current date and time both</li>
+            <li id="bothNew" hidden>get current date and time both</li>
+            <li id="date">get current date only</li>
+            <li id="dateNew" hidden>get current date only</li>
+            <li id="time">get current time only</li>
+            <li id="timeNew" hidden>get current time only</li>
+        </ul>
+    </div>
+</body>
+<script>
+    let dateAndTime = new Date();
+    console.log(dateAndTime);
+    console.dir(dateAndTime);
+
+    console.log(dateAndTime.getDate());
+    console.log(dateAndTime.getDay());
+    
+    var both = document.getElementById("both");
+    var bothNew = document.getElementById("bothNew");
+
+    var date = document.getElementById("date");
+    var dateNew = document.getElementById("dateNew");
+
+    var time = document.getElementById("time");
+    var timeNew = document.getElementById("timeNew");
+
+    let si = setInterval(()=>{
+        // console.log(dateAndTime.getSeconds());
+        let dat = new Date();
+        console.log(dat);
+    },1000);
+
+
+    both.addEventListener("click",()=>{
+        if(bothNew.hasAttribute("hidden")){
+            bothNew.removeAttribute("hidden");
+            both.style.opacity=0;
+            setInterval(()=>{
+                let dat = new Date();
+                bothNew.innerHTML = dat; 
+            });
+        }
+        else{
+            bothNew.setAttribute("hidden","true");
+            both.style.opacity=100;
+        }
+    });
+
+    clearInterval(si);
+    
+</script>
+</html>
