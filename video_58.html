@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>The Promise API</h1>
+</body>
+<script>
+
+    //Promise.all
+    let p1 = new Promise((resolve,reject)=>{
+        resolve("resolved promise 1");
+    });
+    let p2 = new Promise((resolve,reject)=>{
+        resolve("resolved promise 2");
+    });
+    let p3 = new Promise((resolve,reject)=>{
+        resolve("resolved promise 3");
+    });
+    
+    let p4 = new Promise((resolve,reject)=>{
+        reject("resolved promise 4");
+    });
+    
+    let promise_all = Promise.all([p1,p2,p3]);
+
+    console.log(promise_all);
+    
+    promise_all.then((value)=>{
+        console.log(value);        
+    });
+
+    let promise_all2 = Promise.all([p1,p2,p3,p4]);
+    console.log(promise_all2);
+    
+    // promise_all2.then((value)=>{
+    //     console.log(value);        
+    // });
+    
+    promise_all2.then((value)=>{
+        console.log(value);        
+    }).catch((error)=>{
+        console.log("error");
+    })
+
+    // Promise.allSettled
+    console.log("Promise.allSettled");
+    
+    let x = new Promise((resolve,reject)=>{
+        resolve("resolved");
+    });
+    let y = new Promise((resolve,reject)=>{
+        reject("rejected");
+    });
+    let promiseSettled = Promise.allSettled([x,y]);
+    promiseSettled.then((value)=>{
+        console.log(value);
+    })
+
+    //Promise.race
+    console.log("promise race");
+    
+    let promiseRace = Promise.race([x,y]);
+    promiseRace.then((value)=>{
+        console.log("inside promise race");
+        console.log(value);
+    });
+
+    //Promise.any
+    let first_promiseAny = new Promise((resolve,reject)=>{
+        // reject(new Error("error 1"));
+        resolve("resolved in promise any")
+    });
+    let second_promiseAny = new Promise((resolve,reject)=>{
+        reject(new Error("error 2"));
+    });
+    let promiseAny = Promise.any([first_promiseAny,second_promiseAny]);
+    promiseAny.then((value)=>{
+        console.log(value);        
+    });
+
+    //Promise.resolve and Promise.reject
+    let makePromiseWithResolve = Promise.resolve("i am resolved in promise.resolve");
+    let makePromiseWithRejected = Promise.reject("i am rejected in promise.reject");
+    let makePromiseWithRejected2 = Promise.reject(new Error("i am rejected in promise.reject"));
+
+    // console.log(makePromiseWithResolve);//i cant use this
+    makePromiseWithResolve.then((value)=>{
+        console.log(value);
+    });
+    makePromiseWithRejected.catch((value)=>{
+        console.log(value);
+    });
+    makePromiseWithRejected2.catch((value)=>{
+        console.log(value);
+    });
+
+
+    
+</script>
+</html>

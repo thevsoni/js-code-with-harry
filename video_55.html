@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise.then() and .catch()</title>
+</head>
+
+<body>
+    <script>
+        let p1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("true vishal soni");
+            }, 2000);
+        });
+        let p2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                reject(new Error("i m an error"));
+            }, 2000);
+        });
+
+        // console.log(p1,p2);
+        // console.log(p1);
+        // console.log(p2);
+
+
+        // p2.then((value)=>{
+        //     console.log(value);
+        // });
+        // p2.catch((error)=>{
+        //     console.log("some error is there");
+        // });
+
+        p1.then((value) => {
+            console.log(value);
+        }, (error) => {
+            console.log("some error in p1");
+        });
+
+        p2.then((value) => {
+            console.log(value);
+        }, (error) => {
+            console.log("some error in p2");
+        });
+
+
+        /////
+        console.log("a programme");
+        function checkMail() {
+            return new Promise((resolve, reject) => {
+                if (Math.random() > 0.5) {
+                    resolve('Mail has arrived');
+                } else {
+                    reject(new Error('Failed to arrive'));
+                }
+            });
+        }
+
+        checkMail()
+            .then((mail) => {
+                console.log(mail);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+            .finally(() => {
+                console.log('Experiment completed');
+            });
+
+        
+            ///
+            
+    
+    let p4 = new Promise((resolve,reject)=>{
+        reject("resolved promise 4");
+    });
+    p4.catch((error)=>{
+        console.log(error);
+        
+    });
+    p4.catch((value)=>{
+        console.log(value);
+        
+    });
+
+    let p5 = new Promise((resolve,reject)=>{
+        reject(new Error("resolved promise 4"));
+    });
+    p5.catch((value)=>{
+        console.log(value);
+    });
+    p5.catch((error)=>{
+        console.log(error);
+    });
+
+    </script>
+</body>
+
+</html>
