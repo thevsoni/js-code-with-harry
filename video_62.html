@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>The finally clause</h1>
+</body>
+<script>
+    const f = () => {
+        setTimeout(()=>{
+            console.log("heyyyyy");
+            
+        },2000);
+        try {
+            console.log("success");
+            
+        } catch (error) {
+            console.log("ok");
+            
+        }
+        finally{
+            console.log("main always chalunga");
+            
+        }
+    }
+    f();
+    console.log("will i come at the last");
+    
+</script>
+</html>
