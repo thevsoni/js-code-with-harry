@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classes and objects</title>
+</head>
+<body>
+    <h1>classes and objects</h1>
+</body>
+<script>
+    class RailwayForm{
+
+        // let name; //cant do this things here in javascript
+        // traino; //but we can do this  
+        submit(){
+            alert(this.name+" : your form is submitted successfully for train number : "+ this.traino);
+        }
+        cancel(){
+            alert(this.name+" : your form is cancelled successfully for train number : "+ this.traino);
+        }
+        fill(givenName,traino){
+            this.name= givenName;
+            this.traino = traino;
+        }
+
+    }
+    let harryForm = new RailwayForm();
+    let carryForm = new RailwayForm();
+
+    harryForm.fill("harry",420);
+    carryForm.fill("carry",786);
+
+    harryForm.submit();
+    carryForm.submit();
+
+    console.log(harryForm.name);
+    
+
+
+
+</script>
+</html>

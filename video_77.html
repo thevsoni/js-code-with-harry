@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>constructor in js</h1>
+</body>
+<script>
+    
+    class RailwayForm{
+        // name;
+        // trainno;
+        // address;
+        //we can define these also and if no then there is nothing happen
+
+
+        constructor(givenname,trainno,address){
+            console.log("constructor called.."+givenname+" "+trainno);
+            
+            this.name = givenname;
+            this.trainno = trainno;
+            this.address = address;
+
+        }
+        preview(){
+            alert(this.name+" : your form is for train no. :"+this.trainno+" and adderess is :"+this.address);
+        }
+        
+        submit(){
+            alert(this.name+" : your form is submitted is successfully for train no. : "+this.trainno);
+        }
+        cancel(){
+            alert(this.name+" : your form is cancelled is successfully for train no. : "+this.trainno);
+            this.trainno=0;
+        }
+    }
+
+    let harryForm = new RailwayForm("harry",420,"gali no. 420");
+    harryForm.preview();
+    harryForm.submit();
+    harryForm.cancel();
+    harryForm.preview();
+</script>
+</html>

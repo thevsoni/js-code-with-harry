@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackerMan</title>
+    <style>
+        *{
+            /* opacity: 0.5; */
+        }
+        body{
+            background-color: black;
+            width: 100%;
+            height: 100%;
+            /* background: url("https://hacker-simulator.com/hacker-simulator.jpg"); */
+            
+            color: green;
+            font-size: 50px;
+            opacity: 1;
+            /* opacity: 0.8; why it is not working for background image*/
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    
+</body>
+<script>
+    let messageList = ["entering in the server.................",
+                        "getting username.................",
+                        "username found.................",
+                        "pwd accessing.................",
+                        "pwd matched................."]
+    
+    let messagePrint = (message) =>{
+
+        return new Promise((resolve,reject)=>{
+            setTimeout(() => {
+
+                console.log(message);
+                let div = document.getElementById("container");
+                div.innerHTML = div.innerHTML + message + "<br>";
+                resolve("resolved");
+            }, 2000);
+        })
+    }                    
+
+    let runFunction = async (messageList) =>{
+
+        for(let i=0; i<messageList.length; i++){
+            await messagePrint(messageList[i]);
+        }
+
+    }   
+    runFunction(messageList);                 
+</script>
+</html>
