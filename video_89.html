@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hoisting</h1>
+</body>
+<script>
+    // console.log(a);
+    console.log(b);
+    // console.log(c);
+    let a = 5;
+    var b = 5;
+    const c = 5;
+
+    greet();
+    function greet(){
+        console.log("hello");
+    }
+
+
+    //cant use this below code
+    // greet2();
+    // greet3();
+    // greet4();
+    var greet2 = () =>{
+        console.log("hello");
+    }
+    let greet3 = () =>{
+        console.log("hello");
+    }
+    const greet4 = () =>{
+        console.log("hello");
+    }
+
+
+    //functions expressions and class expressions are not hoisted
+    // f1();
+    // f2();
+    let f1 = () =>{
+        console.log("function expression 1");
+        
+    }
+    let f2 = function(){
+        console.log("function expression 2");
+    }
+</script>
+</html>
