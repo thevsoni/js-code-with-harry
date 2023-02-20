@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HackerMan</title>
     <style>
+        /*
         *{
             /* opacity: 0.5; */
-        }
+        /* } */
+        */
         body{
             background-color: black;
             width: 100%;
             height: 100%;
-            /* background: url("https://hacker-simulator.com/hacker-simulator.jpg"); */
+            background: url("https://hacker-simulator.com/hacker-simulator.jpg");
             
             color: green;
             font-size: 50px;
@@ -42,7 +44,7 @@
                 let div = document.getElementById("container");
                 div.innerHTML = div.innerHTML + message + "<br>";
                 resolve("resolved");
-            }, 2000);
+            }, 3000);
         })
     }                    
 
@@ -53,6 +55,9 @@
         }
 
     }   
-    runFunction(messageList);                 
+    runFunction(messageList);      
+     
+
+    // p.then        
 </script>
 </html>

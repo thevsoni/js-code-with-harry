@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>getters and setters</h1>
+</body>
+<script>
+    /*
+    class Animal{
+        constructor(name){
+            this.name=name;
+        }
+        getName(){
+            return this.name;
+        }
+        setName(name){
+            this.name = name;
+        }
+
+    }
+    let dog = new Animal("Dog");
+    console.log(dog.getName());
+    console.log(dog.name);
+    
+    dog.setName("Dog2");
+    console.log(dog.getName());
+    console.log(dog.name);
+*/
+    class Animal{
+        constructor(name){
+            this._name=name;
+        }
+        get name(){
+            return this._name;
+        }
+        set name(newName){
+            this._name = name;
+        }
+
+    }
+    let dog = new Animal("Dog");
+    console.log(dog.name);
+    
+</script>
+</html>

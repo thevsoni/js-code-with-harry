@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    
+    class Animal {
+
+
+        constructor(name) {
+            this.name = Animal.capitalize(name)
+        }
+        walk() {
+            alert("Animal " + this.name + " is walking" + Animal.capitalize(this.name));
+        }
+        static capitalize(name) {
+            return name.charAt(0).toUpperCase() + name.substr(1, name.length)
+        }
+    }
+
+    j = new Animal("jack")
+    j.walk()
+
+// console.log(j.capitalize("thisa")) // --- > this doesnt work
+
+/*
+    class Animal2{
+        constructor(name){
+            this.name=name;
+        }
+        walk2(){
+            console.log("u r walking");
+        }
+        static run(){
+            console.log("u r running");
+            
+        }
+    }
+    let obj = new Animal2("vishal");
+    obj.walk2();
+    // obj.run(); //i cant do this in javascript
+*/
+
+</script>
+
+
+</html>
