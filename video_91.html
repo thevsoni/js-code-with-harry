@@ -12,12 +12,23 @@
 <script>
     const x = {
         name:"harry",
-        role:"js deveops",
+        role:"js devops",
         show:function(){
-            console.log(this);
-            let that = this;
-            console.log("this name is = "+this.name);
+            // console.log(this);
+            // let that = this;
+            // console.log("this name is = "+this.name);
+
+            /*
+            setTimeout( function(){
+                console.log(globalThis);
+                console.log(this);
+                console.log("this name is = "+this.name);
+                console.log("this name is = "+this.role);
+            }, 2000);
+            */
             setTimeout(() => {
+                console.log(globalThis);
+                console.log(this);
                 console.log("this name is = "+this.name);
                 console.log("this name is = "+this.role);
             }, 2000);
