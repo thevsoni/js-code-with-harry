@@ -1,0 +1,24 @@
+{
+  "name": "js-code-with-harry",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Video_17_to_20.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thevsoni/js-code-with-harry.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thevsoni/js-code-with-harry/issues"
+  },
+  "homepage": "https://github.com/thevsoni/js-code-with-harry#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
